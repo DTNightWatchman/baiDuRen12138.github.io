@@ -691,10 +691,10 @@
 
 
   
-    <article id="post-阶乘" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-想你" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/16/%E9%98%B6%E4%B9%98/" class="article-date">
-  <time datetime="2020-10-16T12:41:01.000Z" itemprop="datePublished">2020-10-16</time>
+    <a href="/2020/10/29/%E6%83%B3%E4%BD%A0/" class="article-date">
+  <time datetime="2020-10-29T15:09:31.000Z" itemprop="datePublished">2020-10-29</time>
 </a>
     
   </div>
@@ -705,7 +705,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/16/%E9%98%B6%E4%B9%98/">阶乘</a>
+      <a class="article-title" href="/2020/10/29/%E6%83%B3%E4%BD%A0/">想你</a>
     </h1>
   
 
@@ -713,15 +713,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>``#include&lt;stdio.h&gt;<code> </code>int main(void)<code>  </code>{<code>     </code>int number=0;<code>     </code>int sum=0;<code>     </code>printf(“请输入一个数字：”);<code>     </code>scanf(“%d”,&amp;number);<code>     </code>for(int i=0;i&lt;=number;i=i+1)<br>    {<br>        sum=sum+i;<br>    }<br>    printf(“你输入的数字为%d,它的累加为:%d\n”,number,sum);<br>    sum=1;<br>    while(number&gt;1)<code>     </code>{<code>         </code>sum=sum*number;<code>         </code>number=number-1;<code>     </code>}<code>     </code>printf(“它的阶乘为：%d\n”,sum);<code>     return 0;</code></p>
+        <p><strong><em>不是为了和你说话</em></strong></p>
+<p><strong><em>或是别的任何事</em></strong></p>
+<p><strong><em>我见你只是因为我想见你</em></strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/16/%E9%98%B6%E4%B9%98/" data-id="ckh8foydu000018uybrbb0tey" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/29/%E6%83%B3%E4%BD%A0/" data-id="ckh8hnnq00008kkuybdf541oq" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%B6%E4%B9%98/" rel="tag">阶乘</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%83%B3%E8%A7%81%E4%BD%A0/" rel="tag">想见你</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-冒泡函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/27/%E5%86%92%E6%B3%A1%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2020-10-27T08:37:39.000Z" itemprop="datePublished">2020-10-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/27/%E5%86%92%E6%B3%A1%E5%87%BD%E6%95%B0/">冒泡函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一种：用排序方法</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i,j,t;</span><br><span class="line">	int a[10];</span><br><span class="line">	srand((int)time(0));</span><br><span class="line">	printf(&quot;the score of the singers:\n&quot;);</span><br><span class="line">	for(i&#x3D;0;i&lt;10;i++)&#123;</span><br><span class="line">		a[i]&#x3D;(int)(60+40*rand()&#x2F;RAND_MAX);</span><br><span class="line">		printf(&quot;%5d&quot;,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">	for(i&#x3D;0;j&lt;9-i;i++)&#123;</span><br><span class="line">		if(a[j]&gt;a[j+1])&#123;</span><br><span class="line">			t&#x3D;a[j];</span><br><span class="line">			a[j]&#x3D;a[j+1];</span><br><span class="line">			a[j+1]&#x3D;t;</span><br><span class="line">		&#125;</span><br><span class="line">	printf(&quot;The sorted scores:\n&quot;);</span><br><span class="line">	for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">	    printf(&quot;%5d&quot;,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
+
+<p>方案2；运用函数；</p>
+<p>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">void bubble_sort(int arr[])</span><br><span class="line"> &#123;</span><br><span class="line"> 	int i&#x3D;0;</span><br><span class="line"> 	for(i&#x3D;0;i&lt;9;i++)&#123;</span><br><span class="line"> 		&#x2F;&#x2F;每一趟冒泡函数</span><br><span class="line">		int j&#x3D;0;</span><br><span class="line">		for(j&#x3D;0;j&lt;9-i;j++)&#123;</span><br><span class="line">			if(arr[j]&gt;arr[j+1])&#123;</span><br><span class="line">				int tem&#x3D;arr[j+1];</span><br><span class="line">				arr[j+1]&#x3D;arr[j];</span><br><span class="line">				arr[j]&#x3D;tem;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	 &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i&#x3D;0;</span><br><span class="line">	int arr[10];</span><br><span class="line">	srand((int)time(0));</span><br><span class="line">	for(i&#x3D;0;i&lt;10;i++)&#123;</span><br><span class="line">	arr[i]&#x3D;(int)(30+70*rand()&#x2F;RAND_MAX);</span><br><span class="line">    &#125;</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">    printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">	bubble_sort(arr);</span><br><span class="line"></span><br><span class="line">	for (i&#x3D;0;i&lt;10;i++)&#123;</span><br><span class="line">		printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/27/%E5%86%92%E6%B3%A1%E5%87%BD%E6%95%B0/" data-id="ckh8hnnpy0006kkuycdd91jcn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/" rel="tag">解决冒泡排序的两种方法</a></li></ul>
 
     </footer>
   </div>
@@ -731,6 +779,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -743,7 +796,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E7%AC%AC%E4%B8%80%E8%AE%B2/" rel="tag">-CSS第一讲</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">-php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/YT%E6%91%86%E6%B8%A1%E4%BA%BA/" rel="tag">YT摆渡人</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%9D%E5%AD%A6css/" rel="tag">初学css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%AC%E4%B8%80%E8%8A%82%E8%AF%BE/" rel="tag">第一节课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%B6%E4%B9%98/" rel="tag">阶乘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/" rel="tag">随机数</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E7%AC%AC%E4%B8%80%E8%AE%B2/" rel="tag">-CSS第一讲</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">-php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/YT%E6%91%86%E6%B8%A1%E4%BA%BA/" rel="tag">YT摆渡人</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E3%80%8A%E9%98%BF%E7%94%98%E6%AD%A3%E4%BC%A0%E3%80%8B/" rel="tag">《阿甘正传》</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E3%80%8A%E9%A3%98%E3%80%8B/" rel="tag">《飘》</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E6%9D%AF%E8%8C%B6%E5%9E%A2/" rel="tag">一杯茶垢</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E9%9B%A8%E5%92%8C%E8%A7%81%E4%BD%A0/" rel="tag">下雨和见你</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%80%92%E4%B8%89%E8%A7%92%E5%BD%A2/" rel="tag">倒三角形</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%9D%E5%AD%A6css/" rel="tag">初学css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%96%E7%B2%BE%E7%9A%84%E5%B0%BE%E5%B7%B4/" rel="tag">妖精的尾巴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" rel="tag">循环语句</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%A7%81%E4%BD%A0/" rel="tag">想见你</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%BC%A0%E9%80%92/" rel="tag">数组长度传递</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%A9%E6%9F%94%E7%9A%84%E4%BD%A0/" rel="tag">温柔的你</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%84%9A%E8%88%9F%E7%BA%AA/" rel="tag">焚舟纪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%B1/" rel="tag">爱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%98%E5%AF%86%E7%9A%84%E6%88%BF%E9%97%B4/" rel="tag">秘密的房间</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%AC%E4%B8%80%E8%8A%82%E8%AF%BE/" rel="tag">第一节课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/" rel="tag">解决冒泡排序的两种方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%B4%EF%BC%8C%E6%88%91%E6%B2%A1%E4%BA%8B%EF%BC%8C%E6%88%91%E5%BE%88%E5%A5%BD%EF%BC%8C%E6%98%AF%E7%9C%9F%E7%9A%84%E5%A5%BD%E5%90%97%EF%BC%9F/" rel="tag">说，我没事，我很好，是真的好吗？</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%B6%E4%B9%98/" rel="tag">阶乘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/" rel="tag">随机数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%8E%E5%90%B9/" rel="tag">风吹</a></li></ul>
     </div>
   </div>
 
@@ -753,7 +806,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS%E7%AC%AC%E4%B8%80%E8%AE%B2/" style="font-size: 10px;">-CSS第一讲</a> <a href="/tags/php/" style="font-size: 10px;">-php</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/YT%E6%91%86%E6%B8%A1%E4%BA%BA/" style="font-size: 10px;">YT摆渡人</a> <a href="/tags/%E5%88%9D%E5%AD%A6css/" style="font-size: 10px;">初学css</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E8%8A%82%E8%AF%BE/" style="font-size: 10px;">第一节课</a> <a href="/tags/%E9%98%B6%E4%B9%98/" style="font-size: 10px;">阶乘</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/" style="font-size: 10px;">随机数</a>
+      <a href="/tags/CSS%E7%AC%AC%E4%B8%80%E8%AE%B2/" style="font-size: 10px;">-CSS第一讲</a> <a href="/tags/php/" style="font-size: 10px;">-php</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/YT%E6%91%86%E6%B8%A1%E4%BA%BA/" style="font-size: 10px;">YT摆渡人</a> <a href="/tags/%E3%80%8A%E9%98%BF%E7%94%98%E6%AD%A3%E4%BC%A0%E3%80%8B/" style="font-size: 10px;">《阿甘正传》</a> <a href="/tags/%E3%80%8A%E9%A3%98%E3%80%8B/" style="font-size: 10px;">《飘》</a> <a href="/tags/%E4%B8%80%E6%9D%AF%E8%8C%B6%E5%9E%A2/" style="font-size: 10px;">一杯茶垢</a> <a href="/tags/%E4%B8%8B%E9%9B%A8%E5%92%8C%E8%A7%81%E4%BD%A0/" style="font-size: 10px;">下雨和见你</a> <a href="/tags/%E5%80%92%E4%B8%89%E8%A7%92%E5%BD%A2/" style="font-size: 10px;">倒三角形</a> <a href="/tags/%E5%88%9D%E5%AD%A6css/" style="font-size: 10px;">初学css</a> <a href="/tags/%E5%A6%96%E7%B2%BE%E7%9A%84%E5%B0%BE%E5%B7%B4/" style="font-size: 10px;">妖精的尾巴</a> <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 10px;">循环语句</a> <a href="/tags/%E6%83%B3%E8%A7%81%E4%BD%A0/" style="font-size: 10px;">想见你</a> <a href="/tags/%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%BC%A0%E9%80%92/" style="font-size: 10px;">数组长度传递</a> <a href="/tags/%E6%B8%A9%E6%9F%94%E7%9A%84%E4%BD%A0/" style="font-size: 10px;">温柔的你</a> <a href="/tags/%E7%84%9A%E8%88%9F%E7%BA%AA/" style="font-size: 10px;">焚舟纪</a> <a href="/tags/%E7%88%B1/" style="font-size: 10px;">爱</a> <a href="/tags/%E7%A7%98%E5%AF%86%E7%9A%84%E6%88%BF%E9%97%B4/" style="font-size: 10px;">秘密的房间</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E8%8A%82%E8%AF%BE/" style="font-size: 10px;">第一节课</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/" style="font-size: 10px;">解决冒泡排序的两种方法</a> <a href="/tags/%E8%AF%B4%EF%BC%8C%E6%88%91%E6%B2%A1%E4%BA%8B%EF%BC%8C%E6%88%91%E5%BE%88%E5%A5%BD%EF%BC%8C%E6%98%AF%E7%9C%9F%E7%9A%84%E5%A5%BD%E5%90%97%EF%BC%9F/" style="font-size: 10px;">说，我没事，我很好，是真的好吗？</a> <a href="/tags/%E9%98%B6%E4%B9%98/" style="font-size: 10px;">阶乘</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/" style="font-size: 10px;">随机数</a> <a href="/tags/%E9%A3%8E%E5%90%B9/" style="font-size: 10px;">风吹</a>
     </div>
   </div>
 
