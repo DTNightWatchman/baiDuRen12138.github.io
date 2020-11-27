@@ -5,19 +5,18 @@
   
 
   
-  <title>冒泡函数 | Hexo</title>
+  <title>less-1详解 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一种：用排序方法 例如： 12345678910111213141516171819202122232425262728#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;#include&lt;time.h&gt;int main()&amp;#123;	int i,j,t;	int a[10];	srand((int)time(0));	printf(&amp;qu">
+  <meta name="description" content="对第一关的详细讲解SELECT * FROM users WHERE id&#x3D;’1’ LIMIT 0,1当输入?id&#x3D;1时所对应的SQL语句如上当在1后面加入了’后的SQL语句是：SELECT * FROM users WHERE id&#x3D;’1’’ LIMIT 0,1会出现报错，原因是多了一个’，用户输入的是1’，多出来的这个单引号会和前面的单引号进行闭合‘ LIMIT 0,1  这一段是自动写进去的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="冒泡函数">
-<meta property="og:url" content="http://example.com/2020/10/27/%E5%86%92%E6%B3%A1%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="less-1详解">
+<meta property="og:url" content="http://example.com/2020/11/27/less-1%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第一种：用排序方法 例如： 12345678910111213141516171819202122232425262728#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;#include&lt;time.h&gt;int main()&amp;#123;	int i,j,t;	int a[10];	srand((int)time(0));	printf(&amp;qu">
+<meta property="og:description" content="对第一关的详细讲解SELECT * FROM users WHERE id&#x3D;’1’ LIMIT 0,1当输入?id&#x3D;1时所对应的SQL语句如上当在1后面加入了’后的SQL语句是：SELECT * FROM users WHERE id&#x3D;’1’’ LIMIT 0,1会出现报错，原因是多了一个’，用户输入的是1’，多出来的这个单引号会和前面的单引号进行闭合‘ LIMIT 0,1  这一段是自动写进去的">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-27T08:37:39.000Z">
-<meta property="article:modified_time" content="2020-11-24T14:47:36.993Z">
+<meta property="article:published_time" content="2020-11-27T11:05:05.000Z">
+<meta property="article:modified_time" content="2020-11-27T11:05:54.346Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="解决冒泡排序的两种方法">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -67,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-冒泡函数" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-less-1详解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/27/%E5%86%92%E6%B3%A1%E5%87%BD%E6%95%B0/" class="article-date">
-  <time datetime="2020-10-27T08:37:39.000Z" itemprop="datePublished">2020-10-27</time>
+    <a href="/2020/11/27/less-1%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time datetime="2020-11-27T11:05:05.000Z" itemprop="datePublished">2020-11-27</time>
 </a>
     
   </div>
@@ -81,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      冒泡函数
+      less-1详解
     </h1>
   
 
@@ -89,42 +88,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第一种：用排序方法</p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i,j,t;</span><br><span class="line">	int a[10];</span><br><span class="line">	srand((int)time(0));</span><br><span class="line">	printf(&quot;the score of the singers:\n&quot;);</span><br><span class="line">	for(i&#x3D;0;i&lt;10;i++)&#123;</span><br><span class="line">		a[i]&#x3D;(int)(60+40*rand()&#x2F;RAND_MAX);</span><br><span class="line">		printf(&quot;%5d&quot;,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">	for(i&#x3D;0;i&lt;9;i++)</span><br><span class="line">	    for(j&#x3D;0;j&lt;9-i;j++)&#123;</span><br><span class="line">		    if(a[j]&gt;a[j+1])&#123;</span><br><span class="line">			   t&#x3D;a[j];</span><br><span class="line">			   a[j]&#x3D;a[j+1];</span><br><span class="line">			   a[j+1]&#x3D;t;</span><br><span class="line">		     &#125;</span><br><span class="line">		 &#125;</span><br><span class="line">	printf(&quot;The sorted scores:\n&quot;);</span><br><span class="line">	for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">	    printf(&quot;%5d&quot;,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
-
-<p>方案2；运用函数；</p>
-<p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">void bubble_sort(int arr[])</span><br><span class="line"> &#123;</span><br><span class="line"> 	int i&#x3D;0;</span><br><span class="line"> 	for(i&#x3D;0;i&lt;9;i++)&#123;</span><br><span class="line"> 		&#x2F;&#x2F;每一趟冒泡函数</span><br><span class="line">		int j&#x3D;0;</span><br><span class="line">		for(j&#x3D;0;j&lt;9-i;j++)&#123;</span><br><span class="line">			if(arr[j]&gt;arr[j+1])&#123;</span><br><span class="line">				int tem&#x3D;arr[j+1];</span><br><span class="line">				arr[j+1]&#x3D;arr[j];</span><br><span class="line">				arr[j]&#x3D;tem;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	 &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i&#x3D;0;</span><br><span class="line">	int arr[10];</span><br><span class="line">	srand((int)time(0));</span><br><span class="line">	for(i&#x3D;0;i&lt;10;i++)&#123;</span><br><span class="line">	arr[i]&#x3D;(int)(30+70*rand()&#x2F;RAND_MAX);</span><br><span class="line">    &#125;</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">    printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">	bubble_sort(arr);</span><br><span class="line"></span><br><span class="line">	for (i&#x3D;0;i&lt;10;i++)&#123;</span><br><span class="line">		printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <p>对第一关的详细讲解<br>SELECT * FROM users WHERE id=’1’ LIMIT 0,1<br>当输入?id=1时所对应的SQL语句如上<br>当在1后面加入了’后的SQL语句是：SELECT * FROM users WHERE id=’1’’ LIMIT 0,1<br>会出现报错，原因是多了一个’，用户输入的是1’，多出来的这个单引号会和前面的单引号进行闭合<br>‘ LIMIT 0,1  这一段是自动写进去的，直接将这段语句进行注释就可以解决报错<br>用–进行注释<br>单行注释中是用– 来注释（–后面有一个空格），但是直接输入–加一个空格不会有注释的效果，后台所展示的SQL中没有这个空格，那就只能通过其他的方式，最简单的方式在–后面加入一个+<br>+号在后台就被解释成了空格<br>此时的SQL语句就是：SELECT * FROM users WHERE id=’1’– ‘ LIMIT 0,1</p>
+<p>=================================================================================<br>接下来使用”order by”进行判断字段个数<br>order by实际上是用来排序<br>asc是升序<br>desc是倒序<br>order by后面加数字几就是对第几列进行排序，从而实现判断字段个数<br>==========================================================================================<br>联合查询：可合并多个相似的选择查询的结果集。等同于将一个表追加到另一个表，从而实现将两个表的查询组合到一起，使用谓词为UNION或UNION ALL。<br>union select 用来报显示位，原因是左边查询没结果，右边结果1，2，3。就爆出了显示位。<br>===========================================================================================<br>连接字符串的<br>concat<br>concat_vs   select concat_vs(‘~’,database(),version(),user())   ~做连接符<br>group_concat  也是用来拼接字符串的<br>============================================================================================<br>information_schema   看起来是一个标准的是数据库，但这个数据库很特殊，它里面封装了一些MySQL的基本信息，也可以理解为简单的信息数据库。里面<br>都是视图，不是表，所以没有具体文件<br>schemata ——数据库信息<br>       schemata_name——数据库名称<br>tables——数据库和表的关系<br>       schema_name——数据库<br>       table_name——表名<br>colums——表和列的关系<br>       column_name——列名<br>       table_name——表名</p>
+<p>查出了列和表的具体信息，接下来查询数据<br>select 列名 from 表 where 条件</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/27/%E5%86%92%E6%B3%A1%E5%87%BD%E6%95%B0/" data-id="ckh8hnnpy0006kkuycdd91jcn" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/11/27/less-1%E8%AF%A6%E8%A7%A3/" data-id="cki05u1bh00008suy922theko" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/" rel="tag">解决冒泡排序的两种方法</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2020/10/29/%E6%83%B3%E4%BD%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          想你
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/27/%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%BC%A0%E9%80%92/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/11/26/sqli-less1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">数组长度传递</div>
+      <div class="article-nav-title">sqli less1</div>
     </a>
   
 </nav>

@@ -64,6 +64,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-less-1详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/27/less-1%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time datetime="2020-11-27T11:05:05.000Z" itemprop="datePublished">2020-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/27/less-1%E8%AF%A6%E8%A7%A3/">less-1详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对第一关的详细讲解<br>SELECT * FROM users WHERE id=’1’ LIMIT 0,1<br>当输入?id=1时所对应的SQL语句如上<br>当在1后面加入了’后的SQL语句是：SELECT * FROM users WHERE id=’1’’ LIMIT 0,1<br>会出现报错，原因是多了一个’，用户输入的是1’，多出来的这个单引号会和前面的单引号进行闭合<br>‘ LIMIT 0,1  这一段是自动写进去的，直接将这段语句进行注释就可以解决报错<br>用–进行注释<br>单行注释中是用– 来注释（–后面有一个空格），但是直接输入–加一个空格不会有注释的效果，后台所展示的SQL中没有这个空格，那就只能通过其他的方式，最简单的方式在–后面加入一个+<br>+号在后台就被解释成了空格<br>此时的SQL语句就是：SELECT * FROM users WHERE id=’1’– ‘ LIMIT 0,1</p>
+<p>=================================================================================<br>接下来使用”order by”进行判断字段个数<br>order by实际上是用来排序<br>asc是升序<br>desc是倒序<br>order by后面加数字几就是对第几列进行排序，从而实现判断字段个数<br>==========================================================================================<br>联合查询：可合并多个相似的选择查询的结果集。等同于将一个表追加到另一个表，从而实现将两个表的查询组合到一起，使用谓词为UNION或UNION ALL。<br>union select 用来报显示位，原因是左边查询没结果，右边结果1，2，3。就爆出了显示位。<br>===========================================================================================<br>连接字符串的<br>concat<br>concat_vs   select concat_vs(‘~’,database(),version(),user())   ~做连接符<br>group_concat  也是用来拼接字符串的<br>============================================================================================<br>information_schema   看起来是一个标准的是数据库，但这个数据库很特殊，它里面封装了一些MySQL的基本信息，也可以理解为简单的信息数据库。里面<br>都是视图，不是表，所以没有具体文件<br>schemata ——数据库信息<br>       schemata_name——数据库名称<br>tables——数据库和表的关系<br>       schema_name——数据库<br>       table_name——表名<br>colums——表和列的关系<br>       column_name——列名<br>       table_name——表名</p>
+<p>查出了列和表的具体信息，接下来查询数据<br>select 列名 from 表 where 条件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/27/less-1%E8%AF%A6%E8%A7%A3/" data-id="cki05u1bh00008suy922theko" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-sqli-less1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/11/26/sqli-less1/" class="article-date">
@@ -574,78 +613,6 @@
 
 
   
-    <article id="post-CSS初学第一节课" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/11/04/CSS%E5%88%9D%E5%AD%A6%E7%AC%AC%E4%B8%80%E8%8A%82%E8%AF%BE/" class="article-date">
-  <time datetime="2020-11-04T15:58:29.000Z" itemprop="datePublished">2020-11-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/04/CSS%E5%88%9D%E5%AD%A6%E7%AC%AC%E4%B8%80%E8%8A%82%E8%AF%BE/">CSS初学第一节课</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在学习CSS之前一定要先了解HTML</p>
-<p>什么是CSS？</p>
-<p>1.Cascading Stylesheets（叠成样式表）</p>
-<p>2.不是编程语言</p>
-<p>3.告诉浏览器如何指定样式布局等</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Lorem ipsum dolor sit amet&lt;&#x2F;p&gt;</span><br><span class="line">&lt;--想让这部分文字变为红色，就使用CSS--&gt;</span><br><span class="line">p&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一般选用vscode编译器</p>
-<p>三种方式在HTML中添加CSS</p>
-<p>1、外部样式表</p>
-<p>（1）CSS保存在.css文件中</p>
-<p>（2）在HTML里使用link引用（在head里引用）</p>
-<p>2、内部样式表</p>
-<p>（1）不使用外部CSS文件</p>
-<p>（2）将CSS放在HTML<style>里（一般也在head里）</p>
-<p>3、内联样式</p>
-<p>（1）仅影响一个元素</p>
-<p>（2）在HTML元素的style属性中添加</p>
-<p>注：第一种方式使用较多，一般不推荐第三种</p>
-<p>可以去这个网站了解选择器：<a target="_blank" rel="noopener" href="http://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BA%86%E8%A7%A3%E5%88%B0%E4%B8%80%E4%BA%9B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95">http://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors，可以了解到一些更高级的选择方法</a></p>
-<p>最简单的选择方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; class&#x3D;&quot;paragraph&quot; id&#x3D;&quot;para1&quot;&gt;Lorem&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
-
-<p>(1)p{</p>
-<p>color:red;</p>
-<p>}</p>
-<p>(2)用 .paragraph{</p>
-<p>color:red;</p>
-<p>}</p>
-<p>(3)#para1{</p>
-<p>color:red;</p>
-<p>}</p>
-<p>id和class的区别：id一般指文件中唯一的那一个</p>
-<p>所以使用id就必须保证这个id的值在文件中是独一无二的</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/11/04/CSS%E5%88%9D%E5%AD%A6%E7%AC%AC%E4%B8%80%E8%8A%82%E8%AF%BE/" data-id="ckh3l6am30000dsuy3pndgady" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%AC%E4%B8%80%E8%8A%82%E8%AF%BE/" rel="tag">第一节课</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -696,6 +663,10 @@
       <ul>
         
           <li>
+            <a href="/2020/11/27/less-1%E8%AF%A6%E8%A7%A3/">less-1详解</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/26/sqli-less1/">sqli less1</a>
           </li>
         
@@ -709,10 +680,6 @@
         
           <li>
             <a href="/2020/11/17/%E6%96%B9%E9%98%B5/">方阵</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/14/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/">汉诺塔问题</a>
           </li>
         
       </ul>
