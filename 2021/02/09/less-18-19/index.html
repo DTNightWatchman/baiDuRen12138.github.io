@@ -5,14 +5,19 @@
   
 
   
-  <title>Archives: 2020/10 | Hexo</title>
+  <title>less-18~19 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/10/index.html">
+  <meta name="description" content="第18关，按照之前的注入方式可以发现不能注入，通过看源码可以看出是因为对username和password进行了转义。 注入过程中可以发现在当输入正确的用户名和密码时回显示相应的IP地址和user-agent， 、将uagent,IP、uname 插入到security数据库的uagents表中的uagent、ip_address、username三个字段中，在十八关中要输入正确的账号密码才能绕过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="less-18~19">
+<meta property="og:url" content="http://example.com/2021/02/09/less-18-19/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第18关，按照之前的注入方式可以发现不能注入，通过看源码可以看出是因为对username和password进行了转义。 注入过程中可以发现在当输入正确的用户名和密码时回显示相应的IP地址和user-agent， 、将uagent,IP、uname 插入到security数据库的uagents表中的uagent、ip_address、username三个字段中，在十八关中要输入正确的账号密码才能绕过">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-09T01:23:44.000Z">
+<meta property="article:modified_time" content="2021-02-09T01:29:50.832Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="less-18~19">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -62,216 +67,82 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/29/%E6%83%B3%E4%BD%A0/" class="archive-article-date">
-  <time datetime="2020-10-29T15:09:31.000Z" itemprop="datePublished">Oct 29</time>
+        <section id="main"><article id="post-less-18-19" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/02/09/less-18-19/" class="article-date">
+  <time datetime="2021-02-09T01:23:44.000Z" itemprop="datePublished">2021-02-09</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/29/%E6%83%B3%E4%BD%A0/">想你</a>
+    <h1 class="article-title" itemprop="name">
+      less-18~19
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/27/%E5%86%92%E6%B3%A1%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  <time datetime="2020-10-27T08:37:39.000Z" itemprop="datePublished">Oct 27</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/27/%E5%86%92%E6%B3%A1%E5%87%BD%E6%95%B0/">冒泡函数</a>
-    </h1>
-  
+        <p>第18关，按照之前的注入方式可以发现不能注入，通过看源码可以看出是因为对username和password进行了转义。</p>
+<p>注入过程中可以发现在当输入正确的用户名和密码时回显示相应的IP地址和user-agent，</p>
+<p>、将uagent,IP、uname 插入到security数据库的uagents表中的uagent、ip_address、username三个字段中，在十八关中要输入正确的账号密码才能绕过账号密码判断，进入处理user-agent部分。这就类似于注册登入再注入，那么就首先考虑IP和user-agent来注入。这里使用user-agent来进行注入，且是单引号型报错注入。</p>
+<p>首先再在火狐浏览器中使用插件：ModHearder进行对user-agent 的修改</p>
+<p>首先输入下面语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39; or updatexml(null,concat(0x7e,(database())),null) or &#39;1&#39;&#x3D;&#39;1</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/27/%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%BC%A0%E9%80%92/" class="archive-article-date">
-  <time datetime="2020-10-27T08:15:40.000Z" itemprop="datePublished">Oct 27</time>
-</a>
+<p>or ‘1’=’1是对后面单引号的闭合。</p>
+<p>也有另一种输入方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39; or updatexml(1,concat(0x7e,(database())),1),&#39;&#39;,&#39;&#39;)#</span><br></pre></td></tr></table></figure>
+
+<p>这里用两个单引号来代替后面的两个单引号，然后用#来将后面的语句都注释掉</p>
+<p>分别看一下两种输入语句的insert语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;security&#96;.&#96;uagents&#96; (&#96;uagent&#96;, &#96;ip_address&#96;, &#96;username&#96;) VALUES (&#39;&#39; or updatexml(null,concat(0x7e,(database()),0x7e),null) or &#39;1&#39;&#x3D;&#39;1&#39;, &#39;::1&#39;, &#39;admin&#39;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;security&#96;.&#96;uagents&#96; (&#96;uagent&#96;, &#96;ip_address&#96;, &#96;username&#96;) VALUES (&#39;&#39; or updataxml(1,concat(0x7e,(database())),1),&#39;&#39;,&#39;&#39;)#&#39;, &#39;::1&#39;, &#39;admin&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>接下来只要对database（）进行相应的修改就可以了</p>
+<p>第十九关与第十八关的方法大致相同，但当我们正确登入时是回显IP地址和referer，那么就对referer 来注入。</p>
+<p>方法与十八关相同，就不多加赘述了。</p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/27/%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%BC%A0%E9%80%92/">数组长度传递</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/26/%E9%A3%98/" class="archive-article-date">
-  <time datetime="2020-10-26T09:26:46.000Z" itemprop="datePublished">Oct 26</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/09/less-18-19/" data-id="ckkxbuqjv000080uy99m96bdd" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/26/%E9%A3%98/">飘</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/26/%E9%98%BF%E7%94%98%E6%AD%A3%E4%BC%A0/" class="archive-article-date">
-  <time datetime="2020-10-26T09:23:54.000Z" itemprop="datePublished">Oct 26</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/26/%E9%98%BF%E7%94%98%E6%AD%A3%E4%BC%A0/">阿甘正传</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/less-18-19/" rel="tag">less-18~19</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/02/09/less-20/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          less-20
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/22/less-8-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">less-8 知识补充</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/25/%E4%B8%80%E6%9D%AF%E8%8C%B6%E5%9E%A2/" class="archive-article-date">
-  <time datetime="2020-10-25T09:59:21.000Z" itemprop="datePublished">Oct 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/25/%E4%B8%80%E6%9D%AF%E8%8C%B6%E5%9E%A2/">一杯茶垢</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/24/%E4%B8%8B%E9%9B%A8%E5%92%8C%E8%A7%81%E4%BD%A0/" class="archive-article-date">
-  <time datetime="2020-10-24T07:21:54.000Z" itemprop="datePublished">Oct 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/24/%E4%B8%8B%E9%9B%A8%E5%92%8C%E8%A7%81%E4%BD%A0/">下雨和见你</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/24/%E6%B8%A9%E6%9F%94%E7%9A%84%E4%BD%A0/" class="archive-article-date">
-  <time datetime="2020-10-24T07:16:21.000Z" itemprop="datePublished">Oct 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/24/%E6%B8%A9%E6%9F%94%E7%9A%84%E4%BD%A0/">温柔的你</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/22/%E7%A7%98%E5%AF%86%E7%9A%84%E6%88%BF%E9%97%B4/" class="archive-article-date">
-  <time datetime="2020-10-22T14:13:48.000Z" itemprop="datePublished">Oct 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/22/%E7%A7%98%E5%AF%86%E7%9A%84%E6%88%BF%E9%97%B4/">秘密的房间</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/22/%E5%80%92%E4%B8%89%E8%A7%92%E5%BD%A2/" class="archive-article-date">
-  <time datetime="2020-10-22T14:06:05.000Z" itemprop="datePublished">Oct 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/22/%E5%80%92%E4%B8%89%E8%A7%92%E5%BD%A2/">倒三角形</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2020/10/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/10/page/2/">Next &amp;raquo;</a>
-  </nav>
 
 </section>
         
